@@ -1,0 +1,111 @@
+/**
+*项目公共样式
+*/
+// 背景图片地址和大小
+.bis(@url) {
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+//定位全屏
+.allcover {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+//transform上下左右居中
+.ctt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下左右居中
+.ctp(@width, @height) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -@height/2;
+  margin-left: -@width/2;
+}
+
+//定位上下居中
+.tb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+.lr {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+//宽高
+.wh(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+//字体大小、行高、字体
+.ft(@size, @line-height) {
+  font-size: @size;
+  line-height: @line-height;
+}
+
+//字体大小，颜色
+.sc(@size, @color) {
+  font-size: @size;
+  color: @color;
+}
+
+//flex 垂直布局
+.fc() {
+  display: flex;
+  flex-direction: column;
+}
+
+//flex 布局和 子元素 对其方式
+.fj(@type: space-between) {
+  display: flex;
+  justify-content: @type;
+}
+
+//flex 布局和 子元素 对其方式
+.faj(@align: center,@type: space-between) {
+  display: flex;
+  align-items: @align;
+  justify-content: @type;
+}
+
+// position absolute
+.posAb(@top, @right, @bottom, @left) {
+  position: absolute;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+@Primary: #409EFF;
+@Success: #67C23A;
+@Warning: #E6A23C;
+@Danger: #F56C6C;
+@Info: #909399;
+@PrimaryText: #303133;
+@RegularText: #606266;
+@SecondaryText: #909399;
+@Placeholder: #C0C4CC;
+@BorderBase: #DCDFE6;
+@BorderLight: #E4E7ED;
+@BorderLighter: #EBEEF5;
+@BorderExtralight: #F2F6FC;
+@BackgroundColorBase: #f5f7fa;
+@BackgroundTableHeader: #778396;
+@BackgroundWhite: #fff;
+@BackgroundBlack: #000;

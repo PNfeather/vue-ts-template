@@ -1,0 +1,36 @@
+/**
+*表单型展示页面公共样式
+*/
+@import "~@css/mixin.less";
+
+.table_common {
+  .fc;
+  .wh(100%, 100%);
+  .danger {
+    color: @Danger;
+  }
+  .primary {
+    color: @Primary;
+  }
+  .success {
+    color: @Success;
+  }
+  .waring {
+    color: @Warning;
+  }
+  .table-content {
+    .fc();
+    flex: 1;
+    .function-area {
+      margin-bottom: 10px;
+    }
+    .table-section {
+      flex: 1 0 0;
+    }
+    .pagination {
+      margin-top: 30px;
+      height: 60px;
+      .faj(@type:center);
+    }
+  }
+}
