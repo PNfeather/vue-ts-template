@@ -1,4 +1,5 @@
 const path = require('path'); // 引入路径
+const FileManagerPlugin = require('filemanager-webpack-plugin')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -35,5 +36,24 @@ module.exports = {
       .set('@com', resolve('src/components'))
       .set('@sys', resolve('src/systemConfig'))
       .set('@api', resolve('src/api/index.ts'))
+  },
+
+  configureWebpack: config => {  //webpack的相关配置在这里
+    if (process.argv.includes('NEED_ZIP')) {
+      return {
+        plugins: [
+          new FileManagerPlugin({  //初始化 filemanager-webpack-plugin 插件实例
+            onEnd: {
+              delete: [   //首先需要删除项目根目录下的dist.zip
+                './dist.zip',
+              ],
+              archive: [ //然后我们选择dist文件夹将之打包成dist.zip并放在根目录
+                {source: './dist', destination: './dist.zip'},
+              ]
+            }
+          })
+        ]
+      }
+    }
   }
 }

@@ -5,10 +5,8 @@
   "scripts": {
     "serve-mock": "vue-cli-service serve --mode mock",
     "serve-dev": "vue-cli-service serve --mode dev",
-    "build-dev": "vue-cli-service build --mode dev",
-    "build-prod": "vue-cli-service build --mode prod",
-    "removeZip": "rm -rf dist.zip",
-    "zip": "zip -q -r -o dist.zip dist",
+    "build-dev": "vue-cli-service build --mode dev NEED_ZIP",
+    "build-prod": "vue-cli-service build --mode prod NEED_ZIP",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -32,6 +30,7 @@
     "@vue/cli-plugin-typescript": "~4.4.0",
     "@vue/cli-plugin-vuex": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
+    "filemanager-webpack-plugin": "^3.0.0-alpha.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "mockjs": "^1.1.0",
